@@ -17,6 +17,9 @@ function HomePage(){
                         <p className="text-xl text-gray-200">
                             We have a large library courses taught by highly skilled faculities at PwSkills.
                         </p>
+                        {/* <button className="rounded-full p-3 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 ...">
+                            Save changes
+                        </button> */}
                         <div className="space-x-6">
                             <Link to="/courses">
                                 <button className="bg-yellow-500 px-5 py-3 rounded-lg font-semibold text-lg cursor-pointer hover:bg-yellow-600 transition-all ease-in-out duration-300">
