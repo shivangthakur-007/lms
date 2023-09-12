@@ -1,6 +1,6 @@
 import {FiMenu} from 'react-icons/fi'
 import {AiFillCloseCircle} from  'react-icons/ai'
-import { Link, useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import Footer from '../Components/Footer';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -48,7 +48,8 @@ function HomeLayouts({children}){
                 </div>
                 <div className="drawer-side w-0">
                     <label htmlFor="my-drawer" className='drawer-overlay'>
-                        <ul className="menu p-4 w-48 sm:w-80 bg-base-100  text-base-content relative">
+                    </label>
+                        <ul className="menu p-4 w-48 h-[100%] sm:w-80 bg-base-200 text-base-content relative">
                             <li className="w-fit absolute right-2 z-50">
                                 <button onClick={hideDrawer}>
                                     <AiFillCloseCircle size={"24"}/>
@@ -97,7 +98,6 @@ function HomeLayouts({children}){
                                 </li>
                             )}
                         </ul>
-                    </label>
                 </div>
             </div>
         
