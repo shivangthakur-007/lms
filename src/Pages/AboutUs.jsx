@@ -35,6 +35,7 @@ function AboutUs(){
                                                                         totalSlides={Celebrities.length}
                                                                         />))}
             </div>
+            
             </div>
         </HomeLayouts>
     )
