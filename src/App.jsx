@@ -5,6 +5,7 @@ import HomeLayouts from './Layouts/HomeLayouts'
 import HomePage from './Pages/HomePages'
 import AboutUs from './Pages/AboutUs'
 import NotFound from './Pages/NotFound'
+import SignUp from './Pages/SIgnUp'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<HomePage />}></Route>
         <Route path='/about' element={<AboutUs />}></Route>
         <Route path='*' element={<NotFound />}></Route>
+        <Route path='/signup' element={<SignUp />}></Route>
     
     </Routes>
     </>
