@@ -1,36 +1,44 @@
 import HomeLayouts from "../Layouts/HomeLayouts";
 import { Link, useNavigate } from "react-router-dom";
-import { Login } from "../Redux/Slice/AuthSlice";
+import { login } from "../Redux/Slice/AuthSlice";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
-function Signup(){
+function  Login() {
     const dispatch=useDispatch();
     const navigate= useNavigate();
 
-    const [LoginData, setLoginData]= useState({
-        email: '',
-        password: '',
-
-    })
-
+    const [loginData, setLoginData] = useState({
+    email: "",
+    password: "",
+    });
     function handleUserInput(e){
         const {name, value} = e.target;
         setLoginData({
-            ...LoginData,
+            ...loginData,
             [name]:value
         })
     }
 
-
   async function onLogin(event){
         event.preventDefault();
-        if(!LoginData.email || !LoginData.password ){
+        if(!loginData.email || !loginData.password ){
             toast.error('Please fill all the details')
             return;
         }
+        const response= await dispatch(login(loginData))
+            if(response?.payload?.success){
+                navigate('/');
+            }
+            setLoginData({
+                email: '',
+                password: "",
+
+            });
+
     }
+
     return(
     <HomeLayouts>
         <div className="flex items-center justify-center h-[90vh]">
@@ -47,7 +55,7 @@ function Signup(){
                     placeholder="Enter your email.."
                     className="bg-transparent px-2 py-1 border"
                     onChange={handleUserInput}
-                    value={LoginData.email}
+                    value={loginData.email}
                     />
             </div>
             <div className="flex flex-col gap-1">
@@ -60,7 +68,7 @@ function Signup(){
                     placeholder="Enter your password.."
                     className="bg-transparent px-2 py-1 border"
                     onChange={handleUserInput}
-                    value={LoginData.password}
+                    value={loginData.password}
                 />
             </div>
             <button type="submit" className="mt-2 bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm py-2 font-semibold text-lg cursor-pointer">
@@ -71,5 +79,5 @@ function Signup(){
         </div>
     </HomeLayouts>
     )
-}
-export default Signup;
+    }
+export default Login;

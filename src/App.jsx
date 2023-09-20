@@ -2,6 +2,7 @@ import "./App.css";
 import { Route, Routes } from 'react-router-dom'
 import Footer from './Components/Footer'
 import HomeLayouts from './Layouts/HomeLayouts'
+import "./App.css";
 import HomePage from './Pages/HomePages'
 import AboutUs from './Pages/AboutUs'
 import NotFound from './Pages/NotFound'

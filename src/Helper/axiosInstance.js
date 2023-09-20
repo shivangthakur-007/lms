@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const Base_Url= 'http://localhost:8000';
+const Base_Url= 'http://localhost:5014/api/vi';
 
 const axiosInstance= axios.create();
 
