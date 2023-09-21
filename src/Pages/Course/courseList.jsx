@@ -13,7 +13,7 @@ function CourseList() {
     await dispatch(getAllCourses());
   }
   useEffect(() => {
-    loadCourses;
+    loadCourses();
   }, []);
 
   return (
