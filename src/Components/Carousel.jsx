@@ -16,19 +16,17 @@ function CarouselSlide({
         <h3 className="text-2xl font-semibold">{title}</h3>
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
           <a
-            href={`#slide${slidenumber == 1 ? totalSlides : slidenumber - 1}`}
+            href={`#slide${(slidenumber == 1 ? totalSlides : (slidenumber - 1))}`}
             className="btn btn-circle"
           >
             ❮
-          </a>
+          </a>  
           <a
-            href={`#slide${(slidenumber % totalSlides) + 1}`}
+            href={`#slide${(slidenumber) % totalSlides + 1}`}
             className="btn btn-circle"
           >
             ❯
           </a>
-          {/* <a href={`#slide${(slidenumber == 1 ? totalSlides : (slidenumber - 1))}`} className="btn btn-circle">❮</a>
-                    <a href={`#slide${(slidenumber) % totalSlides + 1}`} className="btn btn-circle">❯</a> */}
         </div>
       </div>
     </div>

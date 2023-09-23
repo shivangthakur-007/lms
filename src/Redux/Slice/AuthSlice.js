@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import toast from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import axiosInstance from "../../Helper/axiosInstance";
 
 const initialState= {
@@ -11,13 +11,13 @@ const initialState= {
     export const createAccount= createAsyncThunk('/auth/signup', async (data)=> {
         try {
             const res=axiosInstance.post('user/register', data)
-            toast.promise(res, {
-                loading: 'Wait! creating your account',
-                success: (data)=>{
-                    return data?.data?.message;
-                },
-                error: 'failed to create Your account'
-            });
+                toast.promise(res, {
+                    loading: 'Wait! creating your account',
+                    success: (data)=>{
+                        return data?.data?.message;
+                    },
+                    error: 'failed to create Your account'
+                });
             return (await res).data
         } catch (e) {
             toast.e(e?.response?.data?.message);
