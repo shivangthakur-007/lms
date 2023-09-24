@@ -19,7 +19,7 @@ function Contact() {
     });
   }
   async function onFormSubmit(e) {
-    e.preventdefault();
+    e.preventDefault();
     if (!userInput.email || !userInput.name || !userInput.message) {
       toast.error("All fields are mandatory");
       return;
