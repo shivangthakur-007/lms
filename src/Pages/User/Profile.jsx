@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import HomeLayouts from "../../Layouts/HomeLayouts";
 import { Link } from "react-router-dom";
@@ -30,7 +29,7 @@ function Profile() {
             <Link to="/changePassword" className="w-1/2 bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm font-semibold py-2 cursor-pointer text-center">
                 <button>Change Password</button>
             </Link>
-            <Link to="/user/editProfile" className="w-1/2 bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm font-semibold py-2 cursor-pointer text-center">
+            <Link to="/user/editprofile" className="w-1/2 bg-yellow-600 hover:bg-yellow-500 transition-all ease-in-out duration-300 rounded-sm font-semibold py-2 cursor-pointer text-center">
             <button>Edit Profile</button>
             </Link>
           </div>
